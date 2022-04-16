@@ -6,7 +6,7 @@ module.exports = {
   networks: {
     rinkeby: {
       url: `${process.env.ALCHEMY_RINKEBY_URL}`,
-      accounts: `${process.env.RINKEBY_PRIVATE_KEY}`
+      accounts: [`${process.env.RINKEBY_PRIVATE_KEY}`]
     }
   }
 };

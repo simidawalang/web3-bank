@@ -9,8 +9,6 @@ const deploy = async () => {
   console.log("Bank deployed to:", BankContract.address);
 };
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 deploy()
   .then(() => {
     process.exitCode = 0;

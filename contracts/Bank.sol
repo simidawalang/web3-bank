@@ -11,8 +11,11 @@ contract Bank {
         bankOwner = msg.sender;
     }
 
-    modifier onlyOwner {
-        require(msg.sender == bankOwner, "Only the bank owner can perform this action");
+    modifier onlyOwner() {
+        require(
+            msg.sender == bankOwner,
+            "Only the bank owner can perform this action"
+        );
         _;
     }
 
@@ -25,7 +28,10 @@ contract Bank {
         bankName = _name;
     }
 
-    function withdrawMoney(address payable _to, uint256 _total) public onlyOwner {
+    function withdrawMoney(address payable _to, uint256 _total)
+        public
+        onlyOwner
+    {
         require(
             _total <= customerBalance[msg.sender],
             "You have insuffient funds to withdraw"
